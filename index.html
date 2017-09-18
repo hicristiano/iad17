@@ -11,7 +11,7 @@
   <meta name="keywords" content="art directors,design,creatives">
 
       <!-- <link rel="icon" href="http://iad17.com/content/favcon.png" type="image/png"> -->
-    
+
   <script src="https://use.fontawesome.com/7092820baf.js"></script>
 
 
@@ -30,7 +30,7 @@ body{
 <div class="top-row section">
   <div class="columns">
     <div class="column is-half">
-      <h2>Welcome to our ever in the making website</h2>
+      <h2>xxx website</h2>
     </div>
   </div>
 </div>
@@ -38,12 +38,12 @@ body{
 <link rel="stylesheet" href="css/desktop.css"> 
 
 
-<body class="  pace-done" style="">     
+<body class="  pace-done" style="">
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="http://cristiano.do/lab/iad17/assets/scripts/p5.min.js"></script>
 <script src="http://cristiano.do/lab/iad17/assets/scripts/main.js"></script>
-<script src="http://cristiano.do/lab/iad17/assets/scripts/pace.min.js"></script> 
+<script src="http://cristiano.do/lab/iad17/assets/scripts/pace.min.js"></script>
 
 <div class="grid-overlay"> </div>
 <div id="background"> </div>
@@ -74,7 +74,7 @@ body{
                     "#000000"];
 
     p5.disableFriendlyErrors = true;
-    
+
     function setup(){
             createCanvas(windowWidth,$(document).height()*4);
             if (window.location.href == "http://cristiano.do/lab/iad17/" || window.location.href == "http://cristiano.do/lab/iad17/about") {
@@ -109,7 +109,7 @@ body{
         function draw(){
 
             for(var i=0; i<1 ; i++) {
-                if(count<pastPointsLength) { 
+                if(count<pastPointsLength) {
                     if(atHome){
                         stroke(colors[colorCount%colors.length]);
                     }
@@ -124,7 +124,7 @@ body{
             // }
 
 
-                
+
         }
 
         function drawLine(index){
@@ -164,7 +164,7 @@ body{
         }
 
         function mouseDragged(){
-            
+
 
             mx = mouseX;
             my = mouseY;
@@ -174,7 +174,7 @@ body{
                 pmy = my;
                 mReleased= false;
             }
-            
+
             if(count%2==0){
                 points.push(pmx);
                 points.push(pmy);
@@ -195,7 +195,7 @@ body{
             mReleased = true;
             var s ;
             if (touchIsDown == false){
-  
+
                 if (points.length > 3){
                     s = points;
                 }
@@ -203,7 +203,7 @@ body{
             s = s.toString();
             console.log(s);
             colorCount++;
-            
+
           postCoordinates(s)
           points = [];
           }
