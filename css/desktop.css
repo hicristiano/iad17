@@ -1,0 +1,735 @@
+<style type="text/css">
+    
+    ::selection {
+    background: rgb(255,255,255); /* WebKit/Blink Browsers */
+}
+html{
+    background:none;
+    background:#111;
+}
+
+
+body {
+    font-family: "PxGroteskRegular";
+    font-size: 1rem;
+    text-align: left;
+    line-height: 0px;
+
+    color: #FFF;
+    /*background:rgb(245,245,245);*/
+    text-rendering: geometricPrecision;
+}
+
+a {
+    color:#EEE;
+
+}
+
+/* leading dots */
+ul.leaders {
+    max-width: 40em;
+    padding: 0;
+    overflow-x: hidden;
+    list-style: none;
+    line-height: 150%;
+}
+
+
+ul.leaders li:before {
+    float: left;
+    width: 0;
+    white-space: nowrap;
+    content:
+    ". . . . . . . . . . . . . . . . . . . . "
+    ". . . . . . . . . . . . . . . . . . . . "
+    ". . . . . . . . . . . . . . . . . . . . "
+    ". . . . . . . . . . . . . . . . . . . . "
+}
+
+ul.leaders span:first-child {
+    padding-right: 0.33em;
+    
+}
+ul.leaders span + span {
+    float: right;
+    padding-left: 0.33em;
+    }
+
+ul{
+    list-style-type: none;
+    padding:0;
+    margin:0px; 
+}
+
+h1 {
+    font-family: 'PxGroteskRegular';
+
+}
+
+
+
+.project:first-child {
+    padding-top: 0px;       }
+
+    .project {
+        padding-top: 150px;
+        padding-bottom: 100px;
+        /*padding-top: 50px;*/
+    }
+
+    .description {
+/*padding: 10px;
+padding-top: 7px;*/
+max-width: 800px;
+margin: 0 auto;
+
+}
+
+
+.pace {
+  -webkit-pointer-events: none;
+  pointer-events: none;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.pace-inactive {
+  display: none;
+}
+
+.pace .pace-progress {
+  background: #FFF;
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  right: 100%;
+  width: 100%;
+  height: 2px;
+}
+
+
+.outLink {
+    color:rgb(10,100,255);
+    text-decoration: none;
+    font-size: 22pt;
+    position: relative;
+    top:3px;
+    margin-left: 12px;
+
+}
+
+.tag:hover{
+    color:rgb(100,100,100);
+}
+
+
+.new{
+
+    color:rgb(250,60,120);
+    text-decoration: none;
+    font-size: 14pt;
+    position: relative;
+    top:-1px;
+
+}
+
+#paperclip{
+
+    color:#FFF;
+    text-decoration: none;
+    font-size: 7vw;
+    font-family:"PxGroteskScreen";
+    position: fixed;
+    top:10rem;
+    
+    /*white-space:pre;*/
+    margin-left: 0px;
+        line-height: 120%;
+    z-index: 9999999;
+
+}
+
+#next-project{
+
+    
+    text-decoration: none;
+    font-size: 1.5rem;
+    position: fixed;
+    top: 49%;
+    right: 1.5rem;
+    margin-left: 0px;
+    cursor: pointer;
+    font-family: monospace;
+    z-index: 9999999;
+
+
+}
+
+#prev-project{
+
+    
+    text-decoration: none;
+    font-size: 1.5rem;
+    position: fixed;
+    top: 49%;
+    left: 1.5rem;
+    margin-left: 0px;
+    cursor: pointer;
+    font-family: monospace;
+    z-index: 9999999;
+
+
+}
+
+.expand {
+    color:rgb(10,100,255);
+    text-decoration: none;
+    font-size: 12pt;
+    cursor: pointer;
+    margin-left:0px;
+    position: relative;
+    top:-2px;
+    right:-8px;
+    z-index: 1;
+
+}
+
+.grid-overlay{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(250,250,250,0.7);
+    background:rgb(245,245,245);
+    z-index: 1;
+    opacity: 70%;
+    top: 0;
+    display: none;
+}
+
+
+.small{
+    font-size: 13pt;
+}
+
+.hidden{
+    display: none;
+    line-height: 1.4;
+}
+
+.explanation {
+    /*margin-top: -20px;*/
+    text-align: justify;
+    padding-bottom: 10px;
+    /*color:rgba(100,100,100,200);*/
+
+}
+
+.gallery-item p {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#home {
+    position: fixed;
+    top:1.8rem;
+    left:1.2rem;
+    color:rgb(10,100,255);
+    text-decoration: none;
+    font-size: 14pt;
+    cursor: pointer;
+    z-index: 999999;
+}
+
+canvas{
+    position: absolute;
+    top:0px;
+    left:0px;
+    z-index: -99;
+}
+
+p{
+    margin: none;
+}
+.pagination a{
+    color:rgb(10,100,255);
+    font-size: 14pt;
+
+    z-index: 10;
+}
+
+
+
+#myName{
+    cursor: pointer;
+}
+
+p {
+    line-height: 1.4;
+}
+.header{
+    padding: 10% 0;
+    font-size: 6vh;
+    line-height: 1.4;
+    padding: 0 70px;
+    margin: auto;
+    max-width: 1200px;
+}
+.parent{
+    padding: 5% 0;
+    width: 100%;
+    height:100vh;
+}
+
+#grid{
+
+    cursor: pointer;
+
+
+}
+.next{
+    position: absolute;
+    left:25px;
+}
+.prev{
+    position: absolute;
+    right:25px;
+}
+.thumb{
+    position: absolute;
+    z-index: 1;
+
+}
+.images {
+    max-width:1000px;
+    padding: 75px 75px 15px 75px;
+    margin: auto;
+}
+.images img{
+    max-width: 100%;
+    height:auto;
+
+}
+
+
+.about ul{
+    padding-bottom: 20px;
+    line-height: 145%;
+    color:rgb(70,70,70);
+}
+
+
+
+/*popup styling */
+span.popInfo{
+    background:#F8F8F8;
+    color: rgb(10,100,255);
+    font-size: 13px;
+    height: 30px;
+    letter-spacing: 1px;
+    line-height: 30px;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    top: -80px;
+    left:-0px;
+    display:none;
+    padding:0 20px;
+
+}
+
+span.popInfo:after{
+    content:'';
+    position:absolute;
+    bottom:-5px; 
+    width:10px;
+    height:10px;
+
+    background:#f8f8f8;
+    left:30%;
+    margin-left:-10px;
+    -moz-transform:rotate(45deg);
+    -webkit-transform:rotate(45deg);
+    transform:rotate(45deg);
+}
+span.popTrigger{
+    margin:100px;
+    float:left;
+    position:relative;
+    cursor:pointer;
+}
+
+span.popTrigger:hover span.popInfo{
+    display:block;
+}
+
+.project:first-child {
+    padding-top: 0px;       }
+
+    .project {
+        padding-top: 150px;
+        padding-bottom: 100px;
+        /*padding-top: 50px;*/
+    }
+
+    .description {
+/*padding: 10px;
+padding-top: 7px;*/
+max-width: 800px;
+margin: 0 auto;
+padding: 0 25px;
+
+}
+
+
+
+
+.outLink {
+    color:rgb(10,100,255);
+
+    text-decoration: none;
+    font-size: 22pt;
+    position: relative;
+    top:3px;
+    margin-left: 12px;
+
+}
+
+.tag:hover{
+    color:rgb(100,100,100);     
+}
+
+.title{
+    padding-top: 16px;
+}
+
+
+.new{
+
+    color:rgb(250,60,120);
+    text-decoration: none;
+    font-size: 14pt;
+    position: relative;
+    top:-1px;
+
+}
+
+
+
+
+.expand {
+    color:rgb(10,100,255);
+    font-size: 12pt;
+    cursor: pointer;
+    margin-left:0px;
+    position: relative;
+    top:-2px;
+    right:-8px;
+    z-index: 1;
+
+}
+
+.grid-overlay{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(250,250,250,0.0);
+    /*background: rgb(245,245,245);*/
+    /*background:<?php echo page()->bgcolor() ?>;*/
+    z-index: 1;
+    opacity: 70%;
+    top: 0;
+    display: none;
+}
+
+.small{
+    font-size: 13pt;
+}
+
+.hidden{
+    display: none;
+    line-height: 1.4;
+}
+
+.explanation {
+    /*margin-top: -20px;*/
+    text-align: justify;
+    padding-bottom: 10px;
+    /*color:rgba(100,100,100,200);*/
+
+}
+
+.gallery-item p {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
+
+canvas{
+    position: absolute;
+    top:0px;
+    left:0px;
+    z-index: -99;
+}
+
+p{
+    margin: none;
+}
+
+.pagination a{
+    color:rgb(10,100,255);
+    font-size: 14pt;
+
+
+}
+
+#myName{
+    cursor: pointer;
+}
+
+
+
+.header{
+    padding: 10% 0;
+    font-size: 6vh;
+    line-height: 1.4;
+    padding: 0 70px;
+    margin: auto;
+    max-width: 1200px;
+}
+.parent{
+    padding: 5% 0;
+    width: 100%;
+    height:100vh;
+}
+
+#grid{
+
+
+
+}
+.next{
+    position: fixed;
+    left:25px;
+    bottom:15px;
+    z-index: 0;
+}
+.prev{
+    position: fixed;
+    right:25px;
+    bottom:15px;
+    z-index: 0;
+}
+.thumb{
+    position: absolute;
+    z-index: 1;
+    -webkit-box-shadow: 30px 20px 33px 0px rgba(0,0,0,0.16);
+    -moz-box-shadow: 30px 20px 33px 0px rgba(0,0,0,0.16);
+    box-shadow: 30px 20px 33px 0px rgba(0,0,0,0.16);
+
+}
+.project-thumb{
+    position: absolute;
+    z-index: 1;
+    -webkit-box-shadow: 30px 20px 33px 0px rgba(0,0,0,0.16);
+    -moz-box-shadow: 30px 20px 33px 0px rgba(0,0,0,0.16);
+    box-shadow: 30px 20px 33px 0px rgba(0,0,0,0.16);
+
+}
+.images {
+    max-width:1000px;
+    padding: 75px 75px 15px 75px;
+    margin: auto;
+}
+.images img{
+    max-width: 100%;
+    height:auto;
+    max-height: 100vh;
+
+}
+.images figure{
+    padding:0;
+    margin:0;
+
+}
+.images figure{
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    padding-top: 25px;
+    height: 0;
+}
+.images iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+#toggle-view {
+    width: 12.5px;
+    height: 12.5px;
+    cursor:pointer;
+    background: rgb(245,245,245);
+    position: fixed;
+    top: 91px;
+    right: 20px;
+    z-index: 99;
+    border-radius: 6px;
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+
+.section {
+    /* background-color: white; */
+    padding: 1.3rem 1.6rem;
+}
+
+/*ABOUT*/
+
+.about.section {
+    text-align:left;
+}
+
+.about h2 {
+    margin: 20px 0px;
+}
+
+h2 {
+    padding-bottom: 0.5rem;
+        line-height: 150%;
+}
+
+.bottom-row.section {
+    position: fixed;
+    bottom: 0rem;
+        width: 100%;
+        padding-top: 1.5rem;
+            padding-bottom: 1.6rem;
+}
+
+
+
+
+
+
+}
+
+.paperclip.section {
+        padding: 0.25rem 1.6rem;
+}
+
+figure img {
+    width: 100vw;
+    height: auto;
+}
+
+.project-image {
+    /*height:100%;*/
+       /* max-width: none;*/
+       width:100%;
+}
+
+div#project-image-slide {
+    /*height: 74vh;*/
+}
+
+.carousel-cell {
+    height: 100%;
+}
+
+#background{
+    position: fixed;
+    background-size:cover;
+    z-index:-9;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+}
+
+.text-show{
+
+    /*font-family: PxGroteskScreen;*/
+
+}
+.bottom-nav{
+    position: fixed;
+    bottom: 1.8rem;
+    left: 1.5rem;
+
+
+}
+
+.text-hide{
+    /*font-family: PxGroteskScreen;*/
+
+}
+
+.project-text-row {
+    background:white;
+}
+
+.curly-underline {
+    background: url(../images/underline.png) bottom repeat-x;
+}
+
+li.credit {
+    line-height: 1.4rem;
+}
+
+.top-row.section {
+    padding-top: 1.8rem;
+    position: fixed;
+}
+
+
+    .video {
+  width: 100%    !important;
+  height: auto   !important;
+}
+
+figure{
+/*  margin:7rem;
+    min-height:60vh;
+    max-height:100vh;*/
+}
+
+iframe {
+    width: 100%;
+    height: 100vh;
+}
+
+.caption-bottom{
+display:none;
+}
+
+span.revert {
+    font-family: PxGroteskRegular;
+    font-size: 1.1rem;
+    position: relative;
+    top: -3px;
+}
+
+.project-grid{
+    position: absolute;
+    top:100vh;
+    z-index:-1;
+}
+
+.project-tiles{
+    padding:5rem;
+}
+
+/*.player .video-wrapper{
+    width:100vw;
+}*/
+
+</style>
